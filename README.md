@@ -1,4 +1,4 @@
-ZendSkeletonApplication
+ZendSkeletonApplication with ZF2 Common Modules
 =======================
 
 Introduction
