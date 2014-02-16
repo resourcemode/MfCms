@@ -1,4 +1,4 @@
-ZendSkeletonApplication with ZF2 Common Modules
+Content Management System with ZF2 Common Modules (ZendSkeletonApplication)
 =======================
 
 Introduction
