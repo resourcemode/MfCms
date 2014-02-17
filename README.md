@@ -1,4 +1,4 @@
-ZfCms with Common Modules (ZendSkeletonApplication)
+MfCms with Common Modules (ZendSkeletonApplication)
 =======================
 
 Introduction
