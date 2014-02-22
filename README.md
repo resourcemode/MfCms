@@ -11,16 +11,8 @@ In addition, i impletented the common modules to start with a fully functional C
 
 ZfcUser, ZfcBase, BjyAuthorize, ZnZend.
 
-Installation
-------------
 
-Using Git submodules
---------------------
-Alternatively, you can install using native git submodules:
-
-    git clone https://github.com/michaelphilip/MfCms.git
-    
-    
 Working in progress...
+-------------------
 
 
