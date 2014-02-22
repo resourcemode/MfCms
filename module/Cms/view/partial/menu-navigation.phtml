@@ -1,0 +1,76 @@
+<?php //using bootstrap3 ?>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<?php echo $this->url('web'); ?>" target="_blank"> View Website</span></a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <?php foreach ($this->container as $page): ?>
+            <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
+            <?php // when using partials we need to manually check for ACL conditions ?>
+            <?php if( ! $page->isVisible() || !$this->navigation()->accept($page)) continue; ?>
+            <?php $hasChildren = $page->hasPages() ?>
+            <?php if( ! $hasChildren): ?>
+            <li>
+              <a href="<?php echo $page->getHref() ?>" target="<?php echo $page->getTarget(); ?>">
+                 <span class="<?php echo $page->getClass(); ?>"></span><?php echo $this->translate($page->getLabel()) ?>
+              </a>
+            </li>
+            <?php else: ?>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                 <span class="<?php echo $page->getClass(); ?>"></span>
+                <?php echo $this->translate($page->getLabel()) ?> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <?php foreach($page->getPages() as $child): ?>
+                  <?php // when using partials we need to manually check for ACL conditions ?>
+                  <?php if( ! $child->isVisible() || !$this->navigation()->accept($child)) continue; ?>
+                  <li>
+                      <a href="<?php echo $child->getHref() ?>">
+                          <?php echo $this->translate($child->getLabel()) ?>
+                      </a>
+                  </li>
+                <?php endforeach ?>
+              </ul>
+            </li>
+            <?php endif ?>
+        <?php endforeach ?>
+      </ul>
+    </div>
+    
+  </div>
+</nav>
+
+<script>
+$(document).ready(function() {
+    // if($(window).width() >= 750) {
+        // $('.nav li.dropdown').hover(function() {
+            // $(this).addClass('open');
+        // }, function() {
+            // $(this).removeClass('open');
+        // });
+    // }
+    // if($(window).width() > 750)
+    // {
+        // $('b.caret').hide() 
+    // }
+    
+    // Will also work for relative and absolute hrefs
+    var url = window.location;
+    $('ul.nav a').filter(function() {
+        return this.href == url;
+    }).parent().addClass('active');
+});
+
+
+</script>
