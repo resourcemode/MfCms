@@ -1,8 +1,30 @@
 <?php
-//sample navigation 
+//sample navigation
 return array(
     'navigation' => array(
         'default' => array(
+            array(
+                'label' => 'Media',
+                'resource' => 'cms.media.index',
+                'route' => 'media',
+                'pages' => array(
+                    array(
+                        'label' => 'Gallery',
+                        'action' => 'index',
+                        'resource' => 'cms.media.index',
+                        'visible' => true,
+                        'route' => 'media',
+                    ),
+                    array(
+                        'label' => 'Add New',
+
+                        'action' => 'add',
+                        'resource' => 'cms.media.add',
+                        'visible' => true,
+                        'route' => 'media',
+                    ),
+                ),
+            ),
             array(
                 'label' => 'Post',
                 'controller' => 'post',
