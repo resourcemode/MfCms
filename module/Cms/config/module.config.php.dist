@@ -1,0 +1,171 @@
+<?php
+/**
+ * Module Configuration (module.config.php)
+ *
+ * @category  Cms 
+ * @author    Michael Favila <michael.favila@bytesasia.com>
+ * @copyright Copyright (c) 2014 Bytes Asia (S) Pte Ltd (http://bytesasia.com)
+ * @version   $Revision: 00001 2014-02-17T11:48+08:00 michael.favila $
+ */
+
+return array(
+    'router' => array(
+        'routes' => array(
+            'home' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '[/:controller][/:action][/:id]',
+                    'defaults' => array(
+                        'controller' => 'Cms\Controller\Index',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),        
+            'cms' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/cmsadmin[/:controller][/:action]',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Cms\Controller',
+                        'controller'    => 'index',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+            ), 
+            'post' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/cmsadmin/post[/:action][/:id]',
+                    'defaults' => array(
+                        'controller'    => 'Cms\Controller\Post',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'add' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/cmsadmin/post/add',
+                            'defaults' => array(
+                                'controller' => 'Cms\Controller\Post',
+                                'action' => 'add',
+                            ),
+                        ),
+                    ),
+                ),
+            ), 
+            
+            'media' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/cmsadmin/media[/:action][/:id]',
+                    'defaults' => array(
+                        'controller'    => 'Cms\Controller\Media',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'add' => array(
+                        'type'    => 'Literal',
+                        'options' => array(
+                            'route'    => '/cmsadmin/media/add',
+                            'defaults' => array(
+                                'controller' => 'Cms\Controller\Media',
+                                'action' => 'add',
+                            ),
+                        ),
+                    ),
+                ),
+            ), 
+            'admin' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/cmsadmin/admin[/:action][/:id]',
+                    'defaults' => array(
+                        'controller'    => 'Cms\Controller\Admin',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'add' => array(
+                        'type'    => 'Literal',
+                        'options' => array(
+                            'route'    => '/cmsadmin/admin/add',
+                            'defaults' => array(
+                                'controller' => 'Cms\Controller\Admin',
+                                'action' => 'add',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            'log' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/cmsadmin/log[/:action][/:id][/]',
+                    'defaults' => array(
+                        'controller'    => 'Cms\Controller\Log',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+            ),
+        ),
+    ),
+		
+	'module_layouts' => array(
+        'Web' => 'layout/layout',
+		'Cms' => 'layout/cms-layout',
+        'ZfcUser' => 'layout/cms-layout',
+    ),  
+	
+    'service_manager' => array(
+        'abstract_factories' => array(
+            'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
+            'Zend\Log\LoggerAbstractServiceFactory',
+        ),
+        'aliases' => array(
+            'translator' => 'MvcTranslator',
+        ),
+    ),
+    'translator' => array(
+        'locale' => 'en_US',
+        'translation_file_patterns' => array(
+            array(
+                'type'     => 'gettext',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern'  => '%s.mo',
+            ),
+        ),
+    ),
+    'controllers' => array(
+        'invokables' => array(
+            'Cms\Controller\Index' => 'Cms\Controller\IndexController',
+			'Cms\Controller\Post' => 'Cms\Controller\PostController',
+            'Cms\Controller\Log' => 'Cms\Controller\LogController',
+            'Cms\Controller\Customer' => 'Cms\Controller\CustomerController',
+            'Cms\Controller\Admin' => 'Cms\Controller\AdminController',
+        ),
+    ),
+    'view_manager' => array(
+        'display_not_found_reason' => true,
+        'display_exceptions'       => true,
+        'doctype'                  => 'HTML5',
+        'not_found_template'       => 'error/404',
+        'exception_template'       => 'error/index',
+        'template_map' => array(
+            'cms-paginator'           => __DIR__ . '/../view/cms/cms-paginator.phtml',
+            'layout/layout'           => __DIR__ . '/../view/layout/cms-layout.phtml',
+            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'error/404'               => __DIR__ . '/../../view/error/404.phtml',
+            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+        ),
+        'template_path_stack' => array(
+            __DIR__ . '/../view',
+        ),
+    ),
+);
