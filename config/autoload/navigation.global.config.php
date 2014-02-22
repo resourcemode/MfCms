@@ -1,5 +1,4 @@
 <?php
-//sample navigation
 return array(
     'navigation' => array(
         'default' => array(
