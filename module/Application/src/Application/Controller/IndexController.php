@@ -16,6 +16,15 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        $records = array(
+            'ZF2 - Event Manager, Service Manager',
+            'Twitter Bootstrap Navigation Menu - add active class',
+            'Create custom controller plugin/helper zf2.',
+            'zf2 create select/drop down box and populate options in controller.',
+            'Ways of rendering your form in Zf2',
+        );
+        return new ViewModel(array(
+            'records' => $records,
+        ));
     }
 }
