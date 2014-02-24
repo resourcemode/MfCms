@@ -23,6 +23,7 @@ class IndexController extends AbstractActionController
             'zf2 create select/drop down box and populate options in controller.',
             'Ways of rendering your form in Zf2',
         );
+        
         return new ViewModel(array(
             'records' => $records,
         ));
