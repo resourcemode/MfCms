@@ -14,7 +14,7 @@ class PostTable extends AbstractMapper
     protected $activeRowState = array('post_isdeleted' => 0);
     protected $deletedRowState = array('post_isdeleted' => 1);	
 	
-	/**
+    /**
      * Overrides parent method
 
      * @see ZnZend\Model\AbstractTable getBaseSelect()
