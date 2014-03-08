@@ -16,8 +16,8 @@ class TestController extends AbstractActionController
 {
     public function indexAction()
     {
-        echo 'Test Controller: index action';
-        return new viewModel();
+        //echo 'Test Controller: index action';
+        return new ViewModel();
     }
     
     public function listAction()

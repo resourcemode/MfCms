@@ -3,11 +3,9 @@
  * Module Configuration (module.config.php)
  *
  * @category  Cms 
- * @author    Michael Favila <michael.favila@bytesasia.com>
- * @copyright Copyright (c) 2014 Bytes Asia (S) Pte Ltd (http://bytesasia.com)
- * @version   $Revision: 00001 2014-02-17T11:48+08:00 michael.favila $
+ * @author    Michael Favila <resourcemode@yahoo.com>
+ * @version   $Revision: 00001 2014-03-08T17:09+08:00 michael.favila $
  */
-
 return array(
     'router' => array(
         'routes' => array(

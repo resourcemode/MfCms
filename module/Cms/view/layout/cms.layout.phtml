@@ -3,25 +3,25 @@
 <html lang="en">
     <?php echo $this->render('layout/head.phtml'); ?>
     <body>
-        <?php echo $this->render('layout/cms.menu.phtml'); ?>
-        <div class="container">
-            <div class="row border">
-                <div class="col-md-3">               
-                    <ul>
-                        <li>
-                            Add New Post
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-9">
-                    <?php echo $this->content; ?>
-                </div>
+        <div class="">
+          <?php 
+            echo $this->render('layout/cms.menu.phtml');
+            //echo $this->navigation()->menu()->render('partial/menu-navigation.phtml')
+            //echo $this->render('partial/menu-navigation'); 
+            //echo $this->navigation()->menu()->setPartial('partial/menu-navigation');
+          ?>
+          <?php echo $this->navigation()->breadcrumbs()
+                        ->setPartial('partial/breadcrumbs'); ?>  
+        </div>
+        <div class="row border margin">
+            <div class="col-md-12">
+                <?php echo $this->content; ?>
             </div>
-            <hr>
-            <footer>
-                <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
-            </footer>
-        </div> <!-- /container -->
+        </div>
+        <hr>
+        <footer>
+            <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+        </footer>
         <?php echo $this->inlineScript() ?>
     </body>
 </html>

@@ -19,6 +19,16 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+        
+        //inherit from znZend Module
+        $sm = $e->getApplication()->getServiceManager();
+        // Set global/static db adapter for feature-enabled TableGateways such as ZnZend\Model\AbstractMapper
+        // For example only - up to application to set it as the service manager key for the db adapter may be different
+         if ($sm->has('Zend\Db\Adapter\Adapter')) {
+             \Zend\Db\TableGateway\Feature\GlobalAdapterFeature::setStaticAdapter(
+                 $sm->get('Zend\Db\Adapter\Adapter')
+             );
+         }
     }
 
     public function getConfig()

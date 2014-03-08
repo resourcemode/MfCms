@@ -72,13 +72,12 @@ return array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
-        'aliases' => array(
-            'translator' => 'MvcTranslator',
-        ),
-    ),
-    'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+            //'Navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+        ),
+        'aliases' => array(
+           // 'translator' => 'MvcTranslator',
         ),
     ),
     'translator' => array(

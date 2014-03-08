@@ -25,6 +25,7 @@ return array(
                     => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
     ),
+    
 //    'module_layouts' => array(
 //       'Application' => 'layout/layout.phtml',
 //       'Cms' => 'layout/cms.layout.phtml',

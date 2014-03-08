@@ -74,8 +74,8 @@ return array(
             'BjyAuthorize\Provider\Resource\Config' => array(
                 'pants' => array(),
                 //'user' => array(),
-                'admin' => array(),
-                'tester' => array(''),
+                'post' => array('cms.post.index', 'cms.post.add'),
+                'tester' => array('cms.test.index', 'cms.test.list'),
                 'cmsuser' => array(),
             ),
         ),
@@ -93,6 +93,7 @@ return array(
                     // the "wear" privilege on the resource "pants"
                    // array(array('guest', 'user'), 'pants', 'wear')
                   //  array(array('admin', 'tester'), 'admin'),
+                    array('admin', array('post', 'tester'))
                 ),
 
                 // Don't mix allow/deny rules if you are using role inheritance.
@@ -118,15 +119,6 @@ return array(
                 // You can also specify an array of actions or an array of controllers (or both)
                 // allow "guest" and "admin" to access actions "list" and "manage" on these "index",
                 // "static" and "console" controllers
-//                array(
-//                    'controller' => array('index', 'static', 'console'),
-//                    'action' => array('list', 'manage'),
-//                    'roles' => array('guest', 'admin')
-//                ),
-//                array(
-//                    'controller' => array('search', 'administration'),
-//                    'roles' => array('staffer', 'admin')
-//                ),
                 array(
                     'controller' => array('zfcuser'),
                     //'action' => array('login', 'logout', 'index'),
@@ -137,7 +129,7 @@ return array(
                 array('controller' => 'Application\Controller\Index', 'roles' => array('guest', 'user')),
                 array(
                     'controller' => array('Cms\Controller\Index', 'Cms\Controller\Test', 'Cms\Controller\Post'),
-                    'action' => array('index', 'index', 'list'),
+                    'action' => array('index', 'index', 'list', 'add'),
                     'roles' => array('guest', 'user')
                 ),
 //                array(
@@ -161,7 +153,8 @@ return array(
                 array('route' => 'zfcuser', 'roles' => array('guest', 'user')),
                 array('route' => 'cmsadmin', 'roles' => array('guest', 'user')),
                 array('route' => 'cmstest', 'roles' => array('user')),         
-                array('route' => 'cmspost', 'roles' => array('user'))
+                array('route' => 'cmspost', 'roles' => array('user')),
+                array('route' => 'post', 'roles' => array('user'))
             ),
         ),
     ),

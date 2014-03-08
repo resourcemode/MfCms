@@ -9,12 +9,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo $this->url('web'); ?>" target="_blank"> View Website</span></a>
+      <a class="navbar-brand" href="<?php echo $this->url('home'); ?>" target="_blank"> View Website</span></a>
     </div>
     
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <?php foreach ($this->container as $page): ?>
+        <?php foreach (($this->container ?: array()) as $page): ?>
             <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
             <?php // when using partials we need to manually check for ACL conditions ?>
             <?php if( ! $page->isVisible() || !$this->navigation()->accept($page)) continue; ?>

@@ -28,5 +28,10 @@ class PostController extends AbstractActionController
             'records' => $records,
         ));
     }
+    
+    public function addAction()
+    {
+        return new ViewModel();
+    }
 
 }

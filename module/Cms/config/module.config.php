@@ -50,6 +50,26 @@ return array(
                     ),
                 ),
             ),
+            'post' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/cmsadmin/post',
+                    'defaults' => array(
+                        'controller' => 'Cms\Controller\Post',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'cmstest' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/cmsadmin/test[/:action][/:id]',
+                    'defaults' => array(
+                        'controller' => 'Cms\Controller\Test',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
         ),
     ),
       
@@ -60,6 +80,7 @@ return array(
             'Cms\Controller\Post' => 'Cms\Controller\PostController'          
         ),
     ),
+
     'view_manager' => array(
         'template_path_stack' => array(
             'cms' => __DIR__ . '/../view',
