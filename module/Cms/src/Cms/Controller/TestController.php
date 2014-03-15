@@ -11,13 +11,20 @@ namespace Cms\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Faker\Factory;
 
 class TestController extends AbstractActionController
 {
     public function indexAction()
     {
         //echo 'Test Controller: index action';
-        return new ViewModel();
+        $faker = Factory::create();
+
+        return new ViewModel(array(
+            'name' => $faker->name,
+            'address' => $faker->address,
+            'text' => $faker->text,
+        ));
     }
     
     public function listAction()

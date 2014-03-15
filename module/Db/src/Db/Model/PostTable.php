@@ -20,30 +20,30 @@ class PostTable extends AbstractMapper
      * @see ZnZend\Model\AbstractTable getBaseSelect()
      * @return Select
      */
-    public function getBaseSelect()
-    {
-        $select = parent::getBaseSelect();
-        $select->join( 
-                     'postcat',
-                     'postcat.postcat_id = post.post_postcat',
-                     array('category' => 'postcat_name'),
-                     $select::JOIN_LEFT
-                )
-                ->order(array('post_id DESC'));
-				
-        return $select;
-    }
+//    public function getBaseSelect()
+//    {
+//        $select = parent::getBaseSelect();
+//        $select->join( 
+//                     'postcat',
+//                     'postcat.postcat_id = post.post_postcat',
+//                     array('category' => 'postcat_name'),
+//                     $select::JOIN_LEFT
+//                )
+//                ->order(array('post_id DESC'));
+//				
+//        return $select;
+//    }
     
     /**
      * fetchPublished (will fetch all published data)
      *
      * @return null|paginator object
     */ 
-    public function fetchPublished()
-    {
-        $select = $this->getBaseSelect();
-        $select->where(array('post_ispublished' => 1, 'post_isdeleted' => 0));
-        return $this->getResultSet($select, true);
-    }
+//    public function fetchPublished()
+//    {
+//        $select = $this->getBaseSelect();
+//        $select->where(array('post_ispublished' => 1, 'post_isdeleted' => 0));
+//        return $this->getResultSet($select, true);
+//    }
 	
 }

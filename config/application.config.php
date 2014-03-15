@@ -11,6 +11,7 @@ return array(
         'Helper',
         'Application',
         'Cms',
+        'Faker'
     ),
 
     // These are various options for the listeners attached to the ModuleManager

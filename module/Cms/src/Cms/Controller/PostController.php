@@ -22,7 +22,7 @@ class PostController extends AbstractActionController
         // set the current page to what has been passed in query string, or to 1 if none set
         $records->setCurrentPageNumber((int)$this->params()->fromQuery('page', 1));
         // set the number of items per page to 10
-        $records->setItemCountPerPage(2);
+        $records->setItemCountPerPage(5);
          
         return new ViewModel(array(
             'records' => $records,
