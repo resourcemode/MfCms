@@ -22,6 +22,7 @@ class TestController extends AbstractActionController
 
         return new ViewModel(array(
             'name' => $faker->name,
+            'email' => $faker->email,
             'address' => $faker->address,
             'text' => $faker->text,
         ));

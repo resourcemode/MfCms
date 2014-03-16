@@ -20,43 +20,35 @@ return array(
                     'route'    => '/cmsadmin',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Cms\Controller',
-                        'controller'    => 'Index',
+                        'controller'    => 'index',
                         'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'test' => array(
-                        'type'    => 'Segment',
+                    'post' => array(
+                        'type' => 'Segment',
                         'options' => array(
-                            'route'    => '[/:controller[/:action]]',
+                            'route'    => '/post[/:action][/:id]',
                             'constraints' => array(
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ),
                             'defaults' => array(
+                                'controller' => 'Cms\Controller\Post',
+                                'action'     => 'page',
                             ),
                         ),
                     ),
                 ),
             ),
             'cmspost' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route'    => '/cmsadmin/post',
+                    'route'    => '/cmsadmin/post[/:action][/:id]',
                     'defaults' => array(
                         'controller' => 'Cms\Controller\Post',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'post' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/cmsadmin/post',
-                    'defaults' => array(
-                        'controller' => 'Cms\Controller\Post',
-                        'action'     => 'index',
+                        'action'     => 'page',
                     ),
                 ),
             ),

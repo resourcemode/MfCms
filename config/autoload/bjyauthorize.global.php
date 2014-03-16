@@ -74,7 +74,7 @@ return array(
             'BjyAuthorize\Provider\Resource\Config' => array(
                 'pants' => array(),
                 //'user' => array(),
-                'post' => array('cms.post.index', 'cms.post.add'),
+                'post' => array('cms.post.page', 'cms.post.add'),
                 'tester' => array('cms.test.index', 'cms.test.list'),
                 'cmsuser' => array(),
             ),
@@ -129,7 +129,7 @@ return array(
                 array('controller' => 'Application\Controller\Index', 'roles' => array('guest', 'user')),
                 array(
                     'controller' => array('Cms\Controller\Index', 'Cms\Controller\Test', 'Cms\Controller\Post'),
-                    'action' => array('index', 'index', 'list', 'add'),
+                    'action' => array('index', 'index', 'list', 'add', 'page'),
                     'roles' => array('guest', 'user')
                 ),
 //                array(
@@ -154,7 +154,8 @@ return array(
                 array('route' => 'cmsadmin', 'roles' => array('guest', 'user')),
                 array('route' => 'cmstest', 'roles' => array('user')),         
                 array('route' => 'cmspost', 'roles' => array('user')),
-                array('route' => 'post', 'roles' => array('user'))
+                array('route' => 'post', 'roles' => array('user')),
+                array('route' => 'cmsadmin/post', 'roles' => array('user'))
             ),
         ),
     ),

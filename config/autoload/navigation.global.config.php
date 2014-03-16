@@ -2,49 +2,29 @@
 return array(
     'navigation' => array(
         'default' => array(
-//            array(
-//                'label' => 'Media',
-//                'resource' => 'cms.media.index',
-//                'route' => 'media',
-//                'pages' => array(
-//                    array(
-//                        'label' => 'Gallery',
-//                        'action' => 'index',
-//                        'resource' => 'cms.media.index',
-//                        'visible' => true,
-//                        'route' => 'media',
-//                    ),
-//                    array(
-//                        'label' => 'Add New',
-//
-//                        'action' => 'add',
-//                        'resource' => 'cms.media.add',
-//                        'visible' => true,
-//                        'route' => 'media',
-//                    ),
-//                ),
-//            ),
             array(
                 'label' => 'Post',
                 'controller' => 'post',
-                'action' => 'index',
-                'resource' => 'cms.post.index',
+                'action' => 'page',
+                'resource' => 'cms.post.page',
                 'visible' => true,
-                'route' => 'post',
+                'route' => 'cmsadmin/post',
                 'pages' => array(
                     array(
-                        'label' => 'All Post',    
-                        'action' => 'index',
-                        'resource' => 'cms.post.index',
+                        'label' => 'All Post',   
+                        'controller' => 'post',
+                        'action' => 'page',
+                        'resource' => 'cms.post.page',
                         'visible' => true,
-                        'route' => 'post',
+                        'route' => 'cmsadmin/post',
                     ),
                     array(
                         'label' => 'Add New',
+                        'controller' => 'post',
                         'action' => 'add',
                         'resource' => 'cms.post.add',
                         'visible' => true,
-                        'route' => 'post',
+                        'route' => 'cmsadmin/post',
                     ),
                 ),
             ),
