@@ -11,8 +11,7 @@ I implemented the common modules to start with a fully functional CMS. Modules a
 
 ZfcUser, ZfcBase, BjyAuthorize, ZnZend.
 
-
 Working in progress... but you can download and try (CRUD is already working).
--------------------
+
 
 
