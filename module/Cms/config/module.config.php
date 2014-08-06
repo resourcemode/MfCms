@@ -69,7 +69,7 @@ return array(
         'invokables' => array(
             'Cms\Controller\Index' => 'Cms\Controller\IndexController',
             'Cms\Controller\Test' => 'Cms\Controller\TestController',
-            'Cms\Controller\Post' => 'Cms\Controller\PostController'          
+            'Cms\Controller\Post' => 'Cms\Controller\PostController',          
         ),
     ),
 
