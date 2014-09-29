@@ -5,7 +5,7 @@
     "keywords": [
         "framework",
         "zf2",
-        "Cms",
+        "Cms"
     ],
     "type": "CMS",
     "homepage": "https://github.com/resourcemode/MfCms",
@@ -14,7 +14,7 @@
             "name": "Michael Favila",
             "email": "resourcemode@yahoo.com",
             "homepage": "http://resourcemode.com/"
-        },
+        }
     ],
     "require": {
         "php": ">=5.3.3",
@@ -22,6 +22,6 @@
         "ZF-commons/zfc-user": "1.2.*",
         "bjyoungblood/BjyAuthorize": "1.4.*",
         "zf-commons/zfc-base": "0.*",
-        "zionsg/ZnZend": "dev-master",
+        "zionsg/ZnZend": "dev-master"
     }
 }
