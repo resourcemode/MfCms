@@ -18,10 +18,15 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.2.*",
+        "zendframework/zendframework": "2.3.*",
         "ZF-commons/zfc-user": "1.2.*",
-        "bjyoungblood/BjyAuthorize": "1.4.*",
+        "bjyoungblood/bjy-authorize": "1.4.*",
         "zf-commons/zfc-base": "0.*",
-        "zionsg/ZnZend": "dev-master"
+        "zionsg/znzend": "dev-master"
+    },
+        "autoload": {
+        "psr-0": {
+            "MfCms": "src/"
+        }
     }
 }
