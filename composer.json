@@ -17,16 +17,16 @@
             "homepage": "http://resourcemode.com/"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.3.*",
         "ZF-commons/zfc-user": "1.2.*",
-        "bjyoungblood/bjy-authorize": "1.4.*",
+        "bjyoungblood/bjy-authorize": "dev-master",
         "zf-commons/zfc-base": "0.*",
-        "fzaninotto/Faker": "dev-master",
-        "zionsg/ZnZend": "dev-master"
+        "fzaninotto/Faker": "dev-master"
     },
-        "autoload": {
+    "autoload": {
         "psr-0": {
             "MfCms": "src/"
         }
