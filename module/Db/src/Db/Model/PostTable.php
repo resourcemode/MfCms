@@ -4,7 +4,6 @@ namespace Db\Model;
 use Zend\Db\Sql\Predicate;
 use Zend\Db\Sql\Where;
 use ZnZend\Db\AbstractMapper;
-use Db\Model\Entity\Post;
 
 class PostTable extends AbstractMapper
 {
@@ -38,7 +37,7 @@ class PostTable extends AbstractMapper
      * fetchPublished (will fetch all published data)
      *
      * @return null|paginator object
-    */ 
+    */
     public function fetchPublished()
     {
         $select = $this->getBaseSelect();
