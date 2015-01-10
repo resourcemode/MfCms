@@ -20,15 +20,17 @@ class PostController extends AbstractActionController
     public function pageAction()
     {
         $table = new PostTable();
-        $records = $table->fetchAll(); //var_dump($this->params('page'));
+        $records = $table->fetchAll();
+
         // set the current page to what has been passed in query string, or to 1 if none set
         //$records->setCurrentPageNumber((int)$this->params()->fromQuery('page', 1));
         $records->setCurrentPageNumber((int)$this->params('id'));
         
-//        $records->setItemCountPerPage(5);
-//        foreach ($records as $record) {
-//            var_dump($record->getName());
-//        } exit;
+        /*$records->setItemCountPerPage(5);
+        foreach ($records as $record) {
+            var_dump($record->getName());
+        }*/
+
         // set the number of items per page to 10
         $records->setItemCountPerPage(5);
          

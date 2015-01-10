@@ -1,7 +1,7 @@
 {
     "name": "MfCms",
     "description": "CMS Skeleton Application for ZF2 using common modules",
-    "version": "0.0.1",
+    "version": "1.0",
     "license": "BSD-3-Clause",
     "keywords": [
         "framework",
@@ -24,7 +24,8 @@
         "ZF-commons/zfc-user": "1.2.*",
         "bjyoungblood/bjy-authorize": "dev-master",
         "zf-commons/zfc-base": "0.*",
-        "fzaninotto/Faker": "dev-master"
+        "fzaninotto/Faker": "dev-master",
+        'zionsg/ZnZend': "dev-master"
     },
     "autoload": {
         "psr-0": {
