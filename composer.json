@@ -15,6 +15,11 @@
             "name": "Michael Favila",
             "email": "resourcemode@yahoo.com",
             "homepage": "http://resourcemode.com/"
+        },
+        {
+            "name": "Rafael Torres",
+            "email": "paengski13@yahoo.com",
+            "homepage": "http://resourcemode.com/"
         }
     ],
     "minimum-stability": "dev",
